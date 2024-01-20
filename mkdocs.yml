@@ -1,0 +1,146 @@
+site_name: oysterpus
+
+
+theme:
+  name: material
+  language: en
+  font:
+    # text: Roboto Slab
+    text: Arbutus Slab
+    # text: Source Serif Pro
+    code: DM Mono
+    # code: Noto Sans Mono 
+  favicon: images/favicon.ico
+  palette:  # Offering a light and dark color palette
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+    # - media: "(prefers-color-scheme: light)"
+    #   scheme: default
+    #   primary: teal
+    #   accent: indigo
+    #   toggle:
+    #     icon: material/brightness-7
+    #     name: Switch to dark mode
+    # - media: "(prefers-color-scheme: dark)"
+    #   scheme: slate
+    #   primary: indigo
+    #   accent: indigo
+    #   toggle:
+    #     icon: material/brightness-4
+    #     name: Switch to light mode
+  icon:
+    tag:
+      Hard: fontawesome/solid/h
+      Medium: fontawesome/solid/m
+      Easy: fontawesome/solid/e
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    # - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    - navigation.tracking
+    # - navigation.instant
+    # - navigation.prune
+    # - navigation.sections
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
+
+use_directory_urls: false
+
+
+
+nav:
+  - DevOps: "DevOps/"
+  - Leetcode: "Leetcode/"
+  - Tools: "Tools/"
+  - Better Than Unknown: "Misc/"
+    
+
+
+
+markdown_extensions:
+  - attr_list   # allow to add HTML attributes and CSS classes to Markdown elements
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+     pygments_lang_class: true
+     use_pygments: true
+     line_spans: __span
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+
+plugins:
+  #  - mkdocs-jupyter
+   - search:
+      separator: '[\s\-,:!=\/\[\]()"`]+|\.?(?!\/\d)|&[lg]t;|(?!\/b)(?=[A-Z][a-z])'
+   - tags:
+      tags_file: Leetcode/tags.md
+   - include_dir_to_nav:
+      sort_file: true
+  
+
+  # - minify:
+  #     minify_html: true
+
+extra:
+  tags:
+    Hard: Hard
+    Medium: Medium
+    Easy: Easy
+extra_javascript:
+  - config/javascripts/config.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css: 
+  - config/css/color.css
+
