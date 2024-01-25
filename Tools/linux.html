@@ -1,0 +1,2386 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="GADT.html">
+      
+      
+        <link rel="next" href="markdown.html">
+      
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+    
+    
+      
+        <title>Linux Command Line Tools - oysterpus</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+  
+  
+    
+    
+      
+    
+    
+  
+    
+    
+      
+    
+    
+  
+    
+    
+      
+    
+    
+  
+  
+  <style>.md-tag.md-tag--Hard{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M320 256v192c0 17.7 14.3 32 32 32s32-14.3 32-32V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v128H64V64c0-17.7-14.3-32-32-32S0 46.3 0 64v384c0 17.7 14.3 32 32 32s32-14.3 32-32V256h256z"/></svg>');}.md-tag.md-tag--Medium{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M22.7 33.4c13.5-4.1 28.1 1.1 35.9 12.9l165.4 248L389.4 46.2c7.8-11.7 22.4-17 35.9-12.9S448 49.9 448 64v384c0 17.7-14.3 32-32 32s-32-14.3-32-32V169.7L250.6 369.8c-5.9 8.9-15.9 14.2-26.6 14.2s-20.7-5.3-26.6-14.2L64 169.7V448c0 17.7-14.3 32-32 32S0 465.7 0 448V64c0-14.1 9.2-26.5 22.7-30.6z"/></svg>');}.md-tag.md-tag--Easy{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224c17.7 0 32-14.3 32-32s-14.3-32-32-32H64V288h160c17.7 0 32-14.3 32-32s-14.3-32-32-32H64V96h224c17.7 0 32-14.3 32-32s-14.3-32-32-32H64z"/></svg>');}</style>
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arbutus+Slab:300,300i,400,400i,700,700i%7CDM+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Arbutus Slab";--md-code-font:"DM Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../config/css/color.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linux-command-line-tools" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="oysterpus" class="md-header__button md-logo" aria-label="oysterpus" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            oysterpus
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Linux Command Line Tools
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Supercomputing/1.introduction_to_HPC.html" class="md-tabs__link">
+          
+  
+    
+  
+  Supercomputing
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../DevOps/GCPDevOps/1.core_infrastructure.html" class="md-tabs__link">
+          
+  
+    
+  
+  DevOps
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Leetcode/1207.%20Unique%20Number%20of%20Occurrences.html" class="md-tabs__link">
+          
+  
+    
+  
+  Leetcode
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="GADT.html" class="md-tabs__link">
+          
+  
+    
+  
+  Tools
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Misc/" class="md-tabs__link">
+        
+  
+    
+  
+  Better Than Unknown
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Archive/" class="md-tabs__link">
+        
+  
+    
+  
+  Archive
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="oysterpus" class="md-nav__button md-logo" aria-label="oysterpus" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    oysterpus
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Supercomputing
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Supercomputing
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Supercomputing/1.introduction_to_HPC.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Introduction to HPC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Supercomputing/2.what_is_a_supercomputer.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. What is a supercomputer?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Supercomputing/3.running_and_using_a_supercomputer.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Running and using a supercomputer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Supercomputing/4.parallel_computing_concepts.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Parallel computing concepts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Supercomputing/mpi.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Message Passing Interface(MPI)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Supercomputing/openMP.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenMP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    DevOps
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            DevOps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../DevOps/GCPDevOps/index.html" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    GCPDevOps
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            GCPDevOps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DevOps/GCPDevOps/1.core_infrastructure.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Google Cloud Fundamentals: Core Infrastructure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DevOps/GCPDevOps/2.terraform.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started with Terraform for Google Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DevOps/GCPDevOps/lab1.foundational_Infrastructure_tasks.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LAB: Perform Foundational Infrastructure Tasks in Google Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DevOps/GCPDevOps/lab2.automating_infrastructure_on_GC_terraform.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LAB: Automating Infrastructure on Google Cloud with Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DevOps/GCPDevOps/lab3.implement_devops_in_google_cloud.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LAB: Implement DevOps in Google Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DevOps/GCPDevOps/lab4.build_a_website.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LAB: Build a Website on Google Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../DevOps/GCPSec/index.html" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    GCPSec
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            GCPSec
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DevOps/GCPSec/1.perpare.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Preparing for Your Professional Cloud Security Engineer Journey
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Leetcode
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Leetcode
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Leetcode/1207.%20Unique%20Number%20of%20Occurrences.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1207. Unique Number of Occurrences
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Leetcode/134.%20Gas%20Station.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    134. Gas Station
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Leetcode/135.%20Candy.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    135. Candy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Leetcode/230.%20Kth%20Smallest%20Element%20in%20a%20BST.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    230. Kth Smallest Element in a BST
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Leetcode/380.%20Insert%20Delete%20GetRandom%20O%281%29.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    380. Insert Delete GetRandom O(1)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Leetcode/530.%20Minimum%20Absolute%20Difference%20in%20BST.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    530. Minimum Absolute Difference in BST
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Leetcode/98.%20Validate%20Binary%20Search%20Tree.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    98. Validate Binary Search Tree
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Leetcode/tags.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="GADT.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GADT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Linux Command Line Tools
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="linux.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Linux Command Line Tools
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-linux-basic" class="md-nav__link">
+    <span class="md-ellipsis">
+      0. Linux Basic
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="0. Linux Basic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux-dictionaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux Dictionaries
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-file-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. File &amp; Navigation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. File & Navigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#view-dictionary-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      View dictionary &amp; File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-modify-filedictionary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create &amp; Modify File/Dictionary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compress-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compress File
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-is-running-and-how-to-monitorkill" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. What Is Running And How To Monitor/Kill
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. What Is Running And How To Monitor/Kill">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#viewing-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewing Processes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple processes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-know-my-system-and-get-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Know My System and Get Help
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Know My System and Get Help">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-and-where" class="md-nav__link">
+    <span class="md-ellipsis">
+      What and Where
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-inputoutput-then-redirect" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Input/Output, then Redirect
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Input/Output, then Redirect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reading-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reading Files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redirection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redirection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-how-disk-store-media" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. How Disk Store Media
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. How Disk Store Media">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mounting-and-unmounting-storage-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mounting and Unmounting Storage Devices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-new-file-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating New File Systems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-and-repairing-file-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing and Repairing File Systems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moving-data-directly-to-and-from-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Moving Data Directly to and from Devices
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Network
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examining-and-monitoring-a-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examining and Monitoring a Network
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transporting-files-over-a-networkftp-wget-curl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transporting Files over a Network(ftp, wget, curl)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secure-communication-with-remote-hostsssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secure Communication with Remote Hosts(ssh)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-how-am-i-what-can-i-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. How AM I? What Can I DO?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. How AM I? What Can I DO?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#owners-group-members-and-everybody-else" class="md-nav__link">
+    <span class="md-ellipsis">
+      Owners, Group Members, and Everybody Else
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-miscellaneous" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Miscellaneous
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="markdown.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Markdown / Mkdocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Misc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Better Than Unknown
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Archive/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-linux-basic" class="md-nav__link">
+    <span class="md-ellipsis">
+      0. Linux Basic
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="0. Linux Basic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux-dictionaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux Dictionaries
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-file-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. File &amp; Navigation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. File & Navigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#view-dictionary-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      View dictionary &amp; File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-modify-filedictionary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create &amp; Modify File/Dictionary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compress-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compress File
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-is-running-and-how-to-monitorkill" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. What Is Running And How To Monitor/Kill
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. What Is Running And How To Monitor/Kill">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#viewing-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewing Processes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple processes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-know-my-system-and-get-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Know My System and Get Help
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Know My System and Get Help">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-and-where" class="md-nav__link">
+    <span class="md-ellipsis">
+      What and Where
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-inputoutput-then-redirect" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Input/Output, then Redirect
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Input/Output, then Redirect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reading-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reading Files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redirection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redirection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-how-disk-store-media" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. How Disk Store Media
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. How Disk Store Media">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mounting-and-unmounting-storage-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mounting and Unmounting Storage Devices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-new-file-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating New File Systems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-and-repairing-file-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing and Repairing File Systems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moving-data-directly-to-and-from-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Moving Data Directly to and from Devices
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Network
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examining-and-monitoring-a-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examining and Monitoring a Network
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transporting-files-over-a-networkftp-wget-curl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transporting Files over a Network(ftp, wget, curl)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secure-communication-with-remote-hostsssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secure Communication with Remote Hosts(ssh)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-how-am-i-what-can-i-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. How AM I? What Can I DO?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. How AM I? What Can I DO?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#owners-group-members-and-everybody-else" class="md-nav__link">
+    <span class="md-ellipsis">
+      Owners, Group Members, and Everybody Else
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-miscellaneous" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Miscellaneous
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="linux-command-line-tools">Linux Command Line Tools</h1>
+<h2 id="0-linux-basic">0. Linux Basic</h2>
+<h3 id="linux-dictionaries">Linux Dictionaries</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/proc</code></td>
+<td>Not a real file system, but a virtual one. It is maintain by linux kernel and can communicate with kernel.</td>
+</tr>
+<tr>
+<td><code>/media</code></td>
+<td>contains the mount point of removable devices. They are mounted automatically at insertion.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-file-navigation">1. File &amp; Navigation</h2>
+<h3 id="view-dictionary-file">View dictionary &amp; File</h3>
+<div class="admonition tip">
+<p class="admonition-title">TakeAway</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><span class="nb">pwd</span><span class="w">   </span><span class="c1">#Print name of current working directory</span>
+</span><span id="__span-0-2"><span class="nb">cd</span><span class="w">    </span><span class="c1">#Change directory</span>
+</span><span id="__span-0-3">ls<span class="w">    </span><span class="c1">#List directory contents</span>
+</span><span id="__span-0-4">head<span class="w">  </span><span class="c1">#Show first 10 line of a file</span>
+</span><span id="__span-0-5">tail<span class="w">  </span><span class="c1">#Show last 10 line of a file</span>
+</span></code></pre></div>
+</div>
+<p>🔘 Use <code>pwd</code> to get current dictionary</p>
+<p><code>pwd</code> stands for <strong>print working dictionary</strong>.</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><span class="nv">$pwd</span><span class="w">                                 </span>
+</span><span id="__span-1-2">/home/oysterpus
+</span></code></pre></div>
+<p>🔘 Use <code>head</code>, <code>tail</code> to view part of the file</p>
+<p>By default, head/tail output 10 lines. Line</p>
+<p>🔘 Use <code>more</code>, <code>less</code></p>
+<p>Once the <code>less</code> program starts, we can view the contents of the file. If the file is longer than one page, we can scroll up and down. To exit less, press <code>q</code>.</p>
+<h3 id="create-modify-filedictionary">Create &amp; Modify File/Dictionary</h3>
+<div class="admonition tip">
+<p class="admonition-title">TakeAway</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1">touch<span class="w"> </span><span class="c1">#Create new file</span>
+</span><span id="__span-2-2">shred<span class="w"> </span><span class="c1">#Hide file</span>
+</span><span id="__span-2-3">nano<span class="w">  </span><span class="c1">#Edit file</span>
+</span></code></pre></div>
+</div>
+<!-- About File -->
+<p>🔘 Use <code>touch</code> to create a new file</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1">touch<span class="w"> </span>filename
+</span><span id="__span-3-2">touch<span class="w"> </span>name1<span class="w"> </span>name2<span class="w"> </span>name3<span class="w"> </span>name4<span class="w"> </span><span class="c1"># every name create a single file</span>
+</span><span id="__span-3-3">touch<span class="w"> </span>name<span class="o">{</span><span class="m">1</span>..10<span class="o">}</span><span class="w">             </span><span class="c1"># create file with continuous number</span>
+</span><span id="__span-3-4">touch<span class="w"> </span>-d<span class="w"> </span>tomorrow<span class="w"> </span>filename<span class="w">    </span><span class="c1"># -d to specify file create date</span>
+</span></code></pre></div>
+<p>🔘 Use <code>shred</code> to overwrite and hide a file</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1">shred<span class="w"> </span>filename
+</span></code></pre></div>
+<p>🔘 Use <code>nano</code> and <code>vim</code> to edit a file</p>
+<hr />
+<!-- About Dictionary -->
+
+<p>🔘 Use <code>mkdir</code> to create a new dictionary</p>
+<h3 id="compress-file">Compress File</h3>
+<p>🔘 Use <code>zip</code> to compress file
+🔘 Use <code>unzip</code> to decompress file</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1">zip<span class="w"> </span>zip_name<span class="w"> </span>filename
+</span><span id="__span-5-2">uzip<span class="w"> </span>zip_name<span class="w"> </span>
+</span></code></pre></div>
+<h2 id="2-what-is-running-and-how-to-monitorkill">2. What Is Running And How To Monitor/Kill</h2>
+<div class="admonition tip">
+<p class="admonition-title">TakeAway</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1">ps<span class="w">       </span><span class="c1">#Report a snapshot of current processes</span>
+</span><span id="__span-6-2">top<span class="w">      </span><span class="c1">#Display tasks</span>
+</span><span id="__span-6-3"><span class="nb">jobs</span><span class="w">     </span><span class="c1">#List active jobs</span>
+</span><span id="__span-6-4"><span class="nb">bg</span><span class="w">       </span><span class="c1">#Place a job in the background</span>
+</span><span id="__span-6-5"><span class="nb">fg</span><span class="w">       </span><span class="c1">#Place a job in the foreground</span>
+</span><span id="__span-6-6"><span class="nb">kill</span><span class="w">     </span><span class="c1">#Send a signal to a process</span>
+</span><span id="__span-6-7">killall<span class="w">  </span><span class="c1">#Kill processes by name</span>
+</span><span id="__span-6-8">shutdown<span class="w"> </span><span class="c1">#Shut down or reboot the system</span>
+</span></code></pre></div>
+</div>
+<p>When a system starts up, the kernel initiates a few of its own activities as  processes and launches a program called <code>init</code>.</p>
+<p><code>init</code> returns a series of shell scripts called <strong><em>init scripts</em></strong>.</p>
+<p>A program can launch other programs is expressed in the  process scheme as a <strong>parent process</strong> producing a <strong>child process</strong>.</p>
+<p>Each process is assigned a number called
+<strong>a process ID (PID</strong>).</p>
+<h3 id="viewing-processes">Viewing Processes</h3>
+<p>🔘 Use <code>ps</code></p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><span class="c1"># ps</span>
+</span><span id="__span-7-2"><span class="w">  </span>PID<span class="w"> </span>TTY<span class="w">          </span>TIME<span class="w"> </span>CMD
+</span><span id="__span-7-3"><span class="w"> </span><span class="m">5694</span><span class="w"> </span>pts/6<span class="w">    </span><span class="m">00</span>:00:00<span class="w"> </span>sudo
+</span><span id="__span-7-4"><span class="w"> </span><span class="m">5695</span><span class="w"> </span>pts/6<span class="w">    </span><span class="m">00</span>:00:00<span class="w"> </span>go
+</span><span id="__span-7-5"><span class="w"> </span><span class="m">5814</span><span class="w"> </span>pts/6<span class="w">    </span><span class="m">00</span>:00:00<span class="w"> </span>UTS
+</span><span id="__span-7-6"><span class="w"> </span><span class="m">5818</span><span class="w"> </span>pts/6<span class="w">    </span><span class="m">00</span>:00:00<span class="w"> </span>sh
+</span><span id="__span-7-7"><span class="m">10120</span><span class="w"> </span>pts/6<span class="w">    </span><span class="m">00</span>:00:00<span class="w"> </span>ps
+</span></code></pre></div>
+<ul>
+<li><code>TTY</code> is short for “teletype”  and refers to the <strong>controlling terminal</strong> for the process.</li>
+<li>The <code>TIME</code> field is the amount of CPU time consumed by the process.</li>
+</ul>
+<p>🔘 Use <code>pstree</code>
+Outputs a process list arranged in a tree-like pattern showing the parent-child relationships between processes.</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1">init<span class="o">(</span>Ubuntu-22.<span class="o">(</span><span class="m">1</span><span class="o">)</span>─┬─SessionLeader<span class="o">(</span><span class="m">333</span><span class="o">)</span>─┬─Relay<span class="o">(</span><span class="m">335</span><span class="o">)(</span><span class="m">334</span><span class="o">)</span>───docker-desktop-<span class="o">(</span><span class="m">335</span><span class="o">)</span>─┬─<span class="o">{</span>docker-desktop-<span class="o">}(</span><span class="m">336</span><span class="o">)</span>
+</span><span id="__span-8-2"><span class="w">                   </span>│<span class="w">                    </span>│<span class="w">                                        </span>├─<span class="o">{</span>docker-desktop-<span class="o">}(</span><span class="m">337</span><span class="o">)</span>
+</span><span id="__span-8-3"><span class="w">                   </span>│<span class="w">                    </span>│<span class="w">                                        </span>├─<span class="o">{</span>docker-desktop-<span class="o">}(</span><span class="m">338</span><span class="o">)</span>
+</span><span id="__span-8-4"><span class="w">                   </span>│<span class="w">                    </span>│<span class="w">                                        </span>├─<span class="o">{</span>docker-desktop-<span class="o">}(</span><span class="m">339</span><span class="o">)</span>
+</span><span id="__span-8-5"><span class="w">                   </span>│<span class="w">                    </span>│<span class="w">                                        </span>├─<span class="o">{</span>docker-desktop-<span class="o">}(</span><span class="m">340</span><span class="o">)</span>
+</span><span id="__span-8-6"><span class="o">(</span><span class="m">367</span><span class="o">)</span>
+</span><span id="__span-8-7"><span class="w">                   </span>│<span class="w">                    </span>└─Relay<span class="o">(</span><span class="m">352</span><span class="o">)(</span><span class="m">351</span><span class="o">)</span>───docker<span class="o">(</span><span class="m">352</span><span class="o">)</span>─┬─<span class="o">{</span>docker<span class="o">}(</span><span class="m">353</span><span class="o">)</span>
+</span><span id="__span-8-8"><span class="w">                   </span>│<span class="w">                                                    </span>├─<span class="o">{</span>docker<span class="o">}(</span><span class="m">354</span><span class="o">)</span>
+</span><span id="__span-8-9"><span class="w">                   </span>│<span class="w">                                                    </span>├─<span class="o">{</span>docker<span class="o">}(</span><span class="m">355</span><span class="o">)</span>
+</span><span id="__span-8-10"><span class="w">                   </span>│<span class="w">                                                    </span>├─<span class="o">{</span>docker<span class="o">}(</span><span class="m">356</span><span class="o">)</span>
+</span><span id="__span-8-11"><span class="w">                   </span>│<span class="w">                    </span>
+</span><span id="__span-8-12"><span class="w">                   </span>├─SessionLeader<span class="o">(</span><span class="m">390</span><span class="o">)</span>───Relay<span class="o">(</span><span class="m">392</span><span class="o">)(</span><span class="m">391</span><span class="o">)</span>─┬─sh<span class="o">(</span><span class="m">392</span><span class="o">)</span>───sh<span class="o">(</span><span class="m">393</span><span class="o">)</span>───sh<span class="o">(</span><span class="m">418</span><span class="o">)</span>───node<span class="o">(</span><span class="m">422</span><span class="o">)</span>─┬─node<span class="o">(</span><span class="m">433</span><span class="o">)</span>─┬─zsh<span class="o">(</span><span class="m">3366</span><span class="o">)</span>───sudo<span class="o">(</span><span class="m">5693</span><span class="o">)</span>───sudo<span class="o">(</span><span class="m">5694</span><span class="o">)</span>───go<span class="o">(</span><span class="m">5695</span><span class="o">)</span>─┬─UTS<span class="o">(</span><span class="m">5814</span><span class="o">)</span>─┬─sh<span class="o">(</span><span class="m">5818</span><span class="o">)</span>───pstree<span class="o">(</span><span class="m">5969</span><span class="o">)</span>
+</span><span id="__span-8-13"><span class="w">                   </span>│<span class="w">                            </span>
+</span></code></pre></div>
+<p>🔘 Use <code>top</code></p>
+<p>The top program displays a <strong>continuously updating</strong> (by default, every 3 seconds) display of the system processes listed in order of process activity.</p>
+<h3 id="multiple-processes">Multiple processes</h3>
+<p>多进程间通信常用的技术手段包括共享内存、消息队列、信号量.</p>
+<p>🔘 Use <code>ipcs</code>
+　　
+- <code>ipcs -m</code>　　查看系统共享内存信息
+- <code>ipcs -q</code>　　查看系统消息队列信息
+- <code>ipcs -s</code>　　查看系统信号量信息,
+- <code>ipcs [-a]</code>　系统默认输出信息，显示系统内所有的IPC信息</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><span class="c1"># ipcs</span>
+</span><span id="__span-9-2">------<span class="w"> </span>Message<span class="w"> </span>Queues<span class="w"> </span>--------
+</span><span id="__span-9-3">key<span class="w">        </span>msqid<span class="w">      </span>owner<span class="w">      </span>perms<span class="w">      </span>used-bytes<span class="w">   </span>messages<span class="w">    </span>
+</span><span id="__span-9-4">
+</span><span id="__span-9-5">------<span class="w"> </span>Shared<span class="w"> </span>Memory<span class="w"> </span>Segments<span class="w"> </span>--------
+</span><span id="__span-9-6">key<span class="w">        </span>shmid<span class="w">      </span>owner<span class="w">      </span>perms<span class="w">      </span>bytes<span class="w">      </span>nattch<span class="w">     </span>status<span class="w">      </span>
+</span><span id="__span-9-7">
+</span><span id="__span-9-8">------<span class="w"> </span>Semaphore<span class="w"> </span>Arrays<span class="w"> </span>--------
+</span><span id="__span-9-9">key<span class="w">        </span>semid<span class="w">      </span>owner<span class="w">      </span>perms<span class="w">      </span>nsems
+</span></code></pre></div>
+<p>🔘 Use <code>ipcrm</code>
+通过指定ID(<code>[msq/shm/sem][id/key]</code>)删除IPC资源，同时将与IPC对象关联的数据一并删除，只有超级用户或IPC资源创建者能够删除。</p>
+<h2 id="3-know-my-system-and-get-help">3. Know My System and Get Help</h2>
+<!-- System Info & State & Help Message -->
+
+<h3 id="what-and-where">What and Where</h3>
+<p>🔘 Use <code>man</code> to get help message from tools</p>
+<p>🔘 Use <code>whatis</code> to get a shorter version of <code>man</code></p>
+<p>🔘 Use <code>apropos</code> to find what tools match your need.</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1">apropos<span class="w"> </span>-a<span class="w"> </span>change<span class="w"> </span>user<span class="w">                                    </span>
+</span><span id="__span-10-2">chage<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w">            </span>-<span class="w"> </span>change<span class="w"> </span>user<span class="w"> </span>password<span class="w"> </span>expiry<span class="w"> </span>information
+</span><span id="__span-10-3">chfn<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w">             </span>-<span class="w"> </span>change<span class="w"> </span>real<span class="w"> </span>user<span class="w"> </span>name<span class="w"> </span>and<span class="w"> </span>information
+</span><span id="__span-10-4">passwd<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w">           </span>-<span class="w"> </span>change<span class="w"> </span>user<span class="w"> </span>password
+</span><span id="__span-10-5">ucf<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w">              </span>-<span class="w"> </span>Update<span class="w"> </span>Configuration<span class="w"> </span>File:<span class="w"> </span>preserve<span class="w"> </span>user<span class="w"> </span>changes<span class="w"> </span><span class="k">in</span><span class="w"> </span>configuration<span class="w"> </span>files
+</span><span id="__span-10-6">...
+</span></code></pre></div>
+<h2 id="4-inputoutput-then-redirect">4. Input/Output, then Redirect</h2>
+<div class="admonition tips">
+<p class="admonition-title">TakeAway</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1">cat<span class="w">  </span><span class="c1">#Concatenate files</span>
+</span><span id="__span-11-2">sort<span class="w"> </span><span class="c1">#Sort lines of text</span>
+</span><span id="__span-11-3">uniq<span class="w"> </span><span class="c1">#Report or omit repeated lines</span>
+</span><span id="__span-11-4">grep<span class="w"> </span><span class="c1">#Print lines matching a pattern</span>
+</span><span id="__span-11-5">wc<span class="w">   </span><span class="c1">#Print newline, word, and byte counts for each file</span>
+</span><span id="__span-11-6">head<span class="w"> </span><span class="c1">#Output the first part of a file</span>
+</span><span id="__span-11-7">tail<span class="w"> </span><span class="c1">#Output the last part of a file</span>
+</span><span id="__span-11-8">tee<span class="w">  </span><span class="c1">#Read from standard input and write to standard output and files</span>
+</span></code></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Standard Output/Input</p>
+<ul>
+<li>Programs such as <code>ls</code> actually send their results to a <strong>special file</strong> called standard output (often expressed as <code>stdout</code>) and their status messages to another file called standard error (<code>stderr</code>).</li>
+<li><code>stdin</code> default attaches to keyboard</li>
+</ul>
+</div>
+<h3 id="reading-files">Reading Files</h3>
+<p>🔘 Use <code>cat</code> to concatenate file</p>
+<p>The cat command reads one or more files and copies them to standard output.</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-12-1">cat<span class="w"> </span>filename
+</span><span id="__span-12-2">cat<span class="w"> </span>movie.mpeg.0*<span class="w"> </span>&gt;<span class="w"> </span>movie.mpeg<span class="w"> </span><span class="c1"># join all split media file together</span>
+</span></code></pre></div>
+<h3 id="redirection">Redirection</h3>
+<p>🔘 Use <code>&gt;</code> and <code>&gt;&gt;</code> to redirect output </p>
+<p><code>&gt;</code> <strong>rewrite</strong> a file, while <code>&gt;&gt;</code> append the content to the end.</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-13-1">ls<span class="w"> </span>-l<span class="w"> </span>/usr/bin<span class="w"> </span>&gt;<span class="w"> </span>ls-output.txt
+</span></code></pre></div>
+<p>🔘 Use <code>2&gt;</code> to redirect error</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-14-1">ls<span class="w"> </span>-l<span class="w"> </span>/bin/usr<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>ls-error.txt
+</span></code></pre></div>
+<p>🔘 Use <code>|</code> to pipeline 2 commands</p>
+<p>Read data from standard input and send to
+standard output.</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-15-1">command1<span class="w"> </span><span class="p">|</span><span class="w"> </span>command2
+</span></code></pre></div>
+<h2 id="5-how-disk-store-media">5. How Disk Store Media</h2>
+<div class="admonition tip">
+<p class="admonition-title">Takeaway</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-16-1">mount<span class="w">                </span><span class="c1">#Mount a file system</span>
+</span><span id="__span-16-2">umount<span class="w">               </span><span class="c1">#Unmount a file system</span>
+</span><span id="__span-16-3">fsck<span class="w">                 </span><span class="c1">#Check and repair a file system</span>
+</span><span id="__span-16-4">fdisk<span class="w">                </span><span class="c1">#Manipulate disk partition table</span>
+</span><span id="__span-16-5">mkfs<span class="w">                 </span><span class="c1">#Create a file system</span>
+</span><span id="__span-16-6">dd<span class="w">                   </span><span class="c1">#Convert and copy a file</span>
+</span><span id="__span-16-7">genisoimage<span class="o">(</span>mkisofs<span class="o">)</span><span class="w"> </span><span class="c1">#Create an ISO 9660 image file</span>
+</span><span id="__span-16-8">wodim<span class="o">(</span>cdrecord<span class="o">)</span><span class="w">      </span><span class="c1">#Write data to optical storage media</span>
+</span><span id="__span-16-9">md5sum<span class="w">               </span><span class="c1">#Calculate an MD5 checksum</span>
+</span></code></pre></div>
+</div>
+<h3 id="mounting-and-unmounting-storage-devices">Mounting and Unmounting Storage Devices</h3>
+<ul>
+<li><strong>Mounting</strong>: managing a storage device is <strong>attaching the device</strong> to the <strong>file system tree</strong>.</li>
+</ul>
+<p>A file named <code>/etc/fstab</code> (short for “file system table”) lists the devices(typically hard disk partitions) that are to be mounted at <strong>boot time</strong>.</p>
+<p><code>/etc/fstab</code> contains 6 field:</p>
+<ul>
+<li><code>Device</code>: Actual name of a device</li>
+<li><code>Mount point</code>: The directory where the device is attached to</li>
+<li><code>File system type</code>: Fourth Extended File System(ext4), FAT16(msdos), FAT32 (vfat), NTFS (ntfs), CD-ROM (iso9660)</li>
+<li><code>Options</code>: read-only, gid ...</li>
+<li><code>Frequency</code>: backed up action when <code>dump</code> command</li>
+<li><code>Order</code>: checked with the <code>fsck</code> command</li>
+</ul>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-17-1"><span class="nv">LABEL</span><span class="o">=</span>/12<span class="w">       </span>/<span class="w">        </span>ext4<span class="w">   </span>defaults<span class="w">       </span><span class="m">1</span><span class="w"> </span><span class="m">1</span>
+</span><span id="__span-17-2"><span class="nv">LABEL</span><span class="o">=</span>/home<span class="w">     </span>/home<span class="w">    </span>ext4<span class="w">   </span>defaults<span class="w">       </span><span class="m">1</span><span class="w"> </span><span class="m">2</span>
+</span><span id="__span-17-3"><span class="nv">LABEL</span><span class="o">=</span>/boot<span class="w">     </span>/boot<span class="w">    </span>ext4<span class="w">   </span>defaults<span class="w">       </span><span class="m">1</span><span class="w"> </span><span class="m">2</span>
+</span><span id="__span-17-4">tmpfs<span class="w">           </span>/dev/shm<span class="w"> </span>tmpfs<span class="w">  </span>defaults<span class="w">       </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-17-5">devpts<span class="w">          </span>/dev/pts<span class="w"> </span>devpts<span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">5</span>,mode<span class="o">=</span><span class="m">620</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-17-6">sysfs<span class="w">           </span>/sys<span class="w">     </span>sysfs<span class="w">  </span>defaults<span class="w">       </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-17-7">proc<span class="w">            </span>/proc<span class="w">    </span>proc<span class="w">   </span>defaults<span class="w">       </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
+</span><span id="__span-17-8"><span class="nv">LABEL</span><span class="o">=</span>SWAP-sda3<span class="w"> </span>swap<span class="w">     </span>swap<span class="w">   </span>defaults<span class="w">       </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
+</span></code></pre></div>
+<p>🔘 Use <code>mount</code></p>
+<p><code>mount</code> command is used to view the file system that currently mounted.</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-18-1">&gt;<span class="w"> </span>mount<span class="w">                         </span>
+</span><span id="__span-18-2">none<span class="w"> </span>on<span class="w"> </span>/mnt/wsl<span class="w"> </span><span class="nb">type</span><span class="w"> </span>tmpfs<span class="w"> </span><span class="o">(</span>rw,relatime<span class="o">)</span>
+</span><span id="__span-18-3">none<span class="w"> </span>on<span class="w"> </span>/usr/lib/wsl/drivers<span class="w"> </span><span class="nb">type</span><span class="w"> </span>9p<span class="w"> </span><span class="o">(</span>ro,nosuid,nodev,noatime,dirsync,aname<span class="o">=</span>drivers<span class="p">;</span><span class="nv">fmask</span><span class="o">=</span><span class="m">222</span><span class="p">;</span><span class="nv">dmask</span><span class="o">=</span><span class="m">222</span>,mmap,access<span class="o">=</span>client,msize<span class="o">=</span><span class="m">65536</span>,trans<span class="o">=</span>fd,rfd<span class="o">=</span><span class="m">7</span>,wfd<span class="o">=</span><span class="m">7</span><span class="o">)</span>
+</span><span id="__span-18-4">none<span class="w"> </span>on<span class="w"> </span>/usr/lib/wsl/lib<span class="w"> </span><span class="nb">type</span><span class="w"> </span>overlay<span class="w"> </span><span class="o">(</span>rw,relatime,lowerdir<span class="o">=</span>/gpu_lib_packaged:/gpu_lib_inbox,upperdir<span class="o">=</span>/gpu_lib/rw/upper,workdir<span class="o">=</span>/gpu_lib/rw/work<span class="o">)</span>
+</span><span id="__span-18-5">/dev/sdc<span class="w"> </span>on<span class="w"> </span>/<span class="w"> </span><span class="nb">type</span><span class="w"> </span>ext4<span class="w"> </span><span class="o">(</span>rw,relatime,discard,errors<span class="o">=</span>remount-ro,data<span class="o">=</span>ordered<span class="o">)</span>
+</span></code></pre></div>
+<p>The format of the listing is as follows:</p>
+<ul>
+<li><code>device</code> on <code>mount_point</code> type <code>filesystem_type</code> (options).</li>
+</ul>
+<p>🔘 Use <code>umount</code> &amp; <code>mount</code> to change mount point</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-19-1">umount<span class="w"> </span>/dev/sdc
+</span><span id="__span-19-2">mkdir<span class="w"> </span>/mnt/cdrom
+</span><span id="__span-19-3">mount<span class="w"> </span>-t<span class="w"> </span>iso9660<span class="w"> </span>/dev/sdc<span class="w"> </span>/mnt/cdrom
+</span></code></pre></div>
+<p>Use <code>-t</code> to specify the file system type, followed by <code>[src] [dst]</code>.</p>
+<h3 id="creating-new-file-systems">Creating New File Systems</h3>
+<h3 id="testing-and-repairing-file-systems">Testing and Repairing File Systems</h3>
+<h3 id="moving-data-directly-to-and-from-devices">Moving Data Directly to and from Devices</h3>
+<h2 id="7-network">7. Network</h2>
+<div class="admonition tip">
+<p class="admonition-title">Takeaway</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-20-1">ping<span class="w">        </span><span class="c1">#Send an ICMP ECHO_REQUEST to network hosts</span>
+</span><span id="__span-20-2">traceroute<span class="w">  </span><span class="c1">#Print the route packets trace to a network host</span>
+</span><span id="__span-20-3">ip<span class="w">          </span><span class="c1">#Show/manipulate routing, devices, policy routing, and tunnels</span>
+</span><span id="__span-20-4">netstat<span class="w">     </span><span class="c1">#Print network connections, routing tables, interface statistics, masquerade connections, and multicast memberships</span>
+</span><span id="__span-20-5">ftp<span class="w">         </span><span class="c1">#Internet file transfer program</span>
+</span><span id="__span-20-6">wget<span class="w">        </span><span class="c1">#Non-interactive network downloader</span>
+</span><span id="__span-20-7">ssh<span class="w">         </span><span class="c1">#OpenSSH SSH client (remote login program)</span>
+</span></code></pre></div>
+</div>
+<h3 id="examining-and-monitoring-a-network">Examining and Monitoring a Network</h3>
+<p>🔘 Use <code>ping</code></p>
+<p>🔘 Use <code>traceroute</code></p>
+<p>🔘 Use <code>ip</code>(<code>ifconfig</code>)</p>
+<p><code>ip</code> is the newer version of <code>ifconfig</code>.</p>
+<p>With ip, we can examine a system’s <strong>network interfaces</strong> and <strong>routing table</strong>.</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-21-1"><span class="c1">#ip a             </span>
+</span><span id="__span-21-2"><span class="m">1</span>:<span class="w"> </span>lo:<span class="w"> </span>&lt;LOOPBACK,UP,LOWER_UP&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">65536</span><span class="w"> </span>qdisc<span class="w"> </span>noqueue<span class="w"> </span>state<span class="w"> </span>UNKNOWN<span class="w"> </span>group<span class="w"> </span>default<span class="w"> </span>qlen<span class="w"> </span><span class="m">1000</span>
+</span><span id="__span-21-3"><span class="w">    </span>link/loopback<span class="w"> </span><span class="m">00</span>:00:00:00:00:00<span class="w"> </span>brd<span class="w"> </span><span class="m">00</span>:00:00:00:00:00
+</span><span id="__span-21-4"><span class="w">    </span>inet<span class="w"> </span><span class="m">127</span>.0.0.1/8<span class="w"> </span>scope<span class="w"> </span>host<span class="w"> </span>lo
+</span><span id="__span-21-5"><span class="w">       </span>valid_lft<span class="w"> </span>forever<span class="w"> </span>preferred_lft<span class="w"> </span>forever
+</span><span id="__span-21-6"><span class="w">    </span>inet6<span class="w"> </span>::1/128<span class="w"> </span>scope<span class="w"> </span>host<span class="w"> </span>
+</span><span id="__span-21-7"><span class="w">       </span>valid_lft<span class="w"> </span>forever<span class="w"> </span>preferred_lft<span class="w"> </span>forever
+</span><span id="__span-21-8"><span class="m">2</span>:<span class="w"> </span>eth0:<span class="w"> </span>&lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">1472</span><span class="w"> </span>qdisc<span class="w"> </span>mq<span class="w"> </span>state<span class="w"> </span>UP<span class="w"> </span>group<span class="w"> </span>default<span class="w"> </span>qlen<span class="w"> </span><span class="m">1000</span>
+</span><span id="__span-21-9"><span class="w">    </span>link/ether<span class="w"> </span><span class="m">00</span>:15:5d:e9:80:d4<span class="w"> </span>brd<span class="w"> </span>ff:ff:ff:ff:ff:ff
+</span><span id="__span-21-10"><span class="w">    </span>inet<span class="w"> </span><span class="m">172</span>.20.209.32/20<span class="w"> </span>brd<span class="w"> </span><span class="m">172</span>.20.223.255<span class="w"> </span>scope<span class="w"> </span>global<span class="w"> </span>eth0
+</span><span id="__span-21-11"><span class="w">       </span>valid_lft<span class="w"> </span>forever<span class="w"> </span>preferred_lft<span class="w"> </span>forever
+</span><span id="__span-21-12"><span class="w">    </span>inet6<span class="w"> </span>fe80::215:5dff:fee9:80d4/64<span class="w"> </span>scope<span class="w"> </span>link<span class="w"> </span>
+</span><span id="__span-21-13"><span class="w">       </span>valid_lft<span class="w"> </span>forever<span class="w"> </span>preferred_lft<span class="w"> </span>forever
+</span></code></pre></div>
+<ul>
+<li>2 interfaces: <code>lo</code> is loopback interface,<code>eth0</code> is the Ethernet interface.</li>
+<li>In the first line of each interface, the <code>UP</code> words indicates the network interface is enabled.</li>
+<li>A valid IP address verifies that the DHCP is working.</li>
+</ul>
+<h3 id="transporting-files-over-a-networkftp-wget-curl">Transporting Files over a Network(<code>ftp</code>, <code>wget</code>, <code>curl</code>)</h3>
+<p>🔘 Use <code>ftp</code> to transfer file via File Transfer Protocol</p>
+<p>URIs starting with the protocol <code>ftp://.</code></p>
+<p>🔘 Use <code>curl</code> to download a file from an url and redirect to another filename</p>
+<h3 id="secure-communication-with-remote-hostsssh">Secure Communication with Remote Hosts(<code>ssh</code>)</h3>
+<p>🔘 Use <code>ssh</code></p>
+<p>SSH consists of two parts. An SSH server runs on the remote host, listening for incoming connections on port 22, while an SSH client is used on the local system to communicate with the remote server.</p>
+<ul>
+<li>It <strong>authenticates</strong> that the remote host is who it says it is (thus preventing so-called MITM attacks).</li>
+<li>It <strong>encrypts</strong> all of the communications between the local and remote hosts.</li>
+</ul>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-22-1">$<span class="w"> </span>ssh<span class="w"> </span>username@1.1.1.1
+</span></code></pre></div>
+<h2 id="8-how-am-i-what-can-i-do">8. How AM I? What Can I DO?</h2>
+<div class="admonition tip">
+<p class="admonition-title">Takeaway</p>
+<div class="language-Shell highlight"><pre><span></span><code><span id="__span-23-1">id<span class="w">        </span><span class="c1">#Display user identity</span>
+</span><span id="__span-23-2">chmod<span class="w">     </span><span class="c1">#Change a file’s mode</span>
+</span><span id="__span-23-3"><span class="nb">umask</span><span class="w">     </span><span class="c1">#Set the default file permissions</span>
+</span><span id="__span-23-4">su<span class="w">        </span><span class="c1">#Run a shell as another user</span>
+</span><span id="__span-23-5">sudo<span class="w">      </span><span class="c1">#Execute a command as another user</span>
+</span><span id="__span-23-6">chown<span class="w">     </span><span class="c1">#Change a file’s owner</span>
+</span><span id="__span-23-7">chgrp<span class="w">     </span><span class="c1">#Change a file’s group ownership</span>
+</span><span id="__span-23-8">passwd<span class="w">    </span><span class="c1">#Change a user’s password</span>
+</span></code></pre></div>
+</div>
+<h3 id="owners-group-members-and-everybody-else">Owners, Group Members, and Everybody Else</h3>
+<p>🔘 Use <code>id</code>
+Find out identity. Include 3 fields: <code>uid</code>, <code>gid</code>, <code>groups</code>.</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-24-1"><span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>oysterpus<span class="o">)</span><span class="w"> </span><span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>oysterpus<span class="o">)</span><span class="w"> </span><span class="nv">groups</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>oysterpus<span class="o">)</span>,4<span class="o">(</span>adm<span class="o">)</span>,20<span class="o">(</span>dialout<span class="o">)</span>,24<span class="o">(</span>cdrom<span class="o">)</span>,25<span class="o">(</span>floppy<span class="o">)</span>,27<span class="o">(</span>sudo<span class="o">)</span>,29<span class="o">(</span>audio<span class="o">)</span>,30<span class="o">(</span>dip<span class="o">)</span>,44<span class="o">(</span>video<span class="o">)</span>,46<span class="o">(</span>plugdev<span class="o">)</span>,116<span class="o">(</span>netdev<span class="o">)</span>,1001<span class="o">(</span>docker<span class="o">)</span>
+</span></code></pre></div>
+<p>User accounts are defined in the <code>/etc/passwd</code> file, and groups are defined in the <code>/etc/group</code> file.</p>
+<h2 id="9-miscellaneous">9. Miscellaneous</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="GADT.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: GADT">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                GADT
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="markdown.html" class="md-footer__link md-footer__link--next" aria-label="Next: Markdown / Mkdocs">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Markdown / Mkdocs
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.tracking", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.c011b7c0.min.js", "tags": {"Easy": "Easy", "Hard": "Hard", "Medium": "Medium"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      
+        <script src="../config/javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

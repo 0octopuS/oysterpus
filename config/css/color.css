@@ -1,0 +1,27 @@
+h1 {
+    background-color: #73A9AD;
+}
+
+h2 {
+    background-color: #B3C890;
+}
+
+h3 {
+    background-color: #F5F0BB;
+}
+
+mark {
+    background-color: #f2e44b;
+}
+
+.md-tag.md-tag-icon.md-tag--Medium {
+    color: #fcc22e;
+}
+
+.md-tag.md-tag-icon.md-tag--Hard {
+    color: #ff4150;
+}
+
+.md-tag.md-tag-icon.md-tag--Easy {
+    color: #33c079;
+}
