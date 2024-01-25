@@ -82,12 +82,14 @@ use_directory_urls: false
 
 
 nav:
+  - Supercomputing: "Supercomputing/"
   - DevOps: "DevOps/"
   - Leetcode: "Leetcode/"
   - Tools: "Tools/"
   - Better Than Unknown: "Misc/"
-    
+  - Archive: "Archive/"
 
+    
 
 
 markdown_extensions:
