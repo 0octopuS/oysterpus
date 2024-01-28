@@ -20,7 +20,7 @@ def bubble_sort(items):
     - 尖括号简单处理URL/email
     - 引用类型链接
 
-超链接Markdown语法代码： [超链接显示名](超链接地址 "超链接title")
+超链接Markdown语法代码： [超链接显示名](./markdown.md "超链接title")
 `[超链接显示名](超链接地址 "超链接title")`
 
 对应的HTML代码：<a href="超链接地址" title="超链接title">超链接显示名</a>
