@@ -1,0 +1,27 @@
+# ninja log v5
+26	1151	7028887912727105	test/CMakeFiles/pir_basic_test.dir/pir_basic_test.cpp.obj	a16a818363384b48
+19	256	7071545923972607	build.ninja	82bb92e99b52a9c3
+25	2144	7063629707465763	simple/CMakeFiles/simplepir.dir/utils.cpp.obj	f724862a9e93d13b
+42	2165	7063629707666538	simple/CMakeFiles/simplepir.dir/pir.cpp.obj	9e11b962db9327c1
+1265	1347	7064723777469101	simple/simplepir.lib	4ec745a08cd2d5f6
+13	668	7028890437385606	test/pir_basic_test.exe	d9f507f33d714b01
+180	2405	7047961367492691	test/CMakeFiles/guass_sample_test.dir/guass_sample_test.cpp.obj	d7c06c2771e62d3a
+1355	1794	7064723781390658	test/guass_sample_test.exe	1d8286417fd540b4
+63	1951	7063629704816678	test/CMakeFiles/params_test.dir/params_test.cpp.obj	db088746a48b7ff3
+27	1265	7064723776631417	simple/CMakeFiles/simplepir.dir/matrix.cpp.obj	2aaa3e1d3cfd2797
+70	2094	7063629706957607	test/CMakeFiles/db_test.dir/db_test.cpp.obj	9a05beb9641aa928
+1956	2237	7064725302886695	test/speed_test.exe	b42d16eccca5c8d0
+1347	1781	7064723781287933	test/params_test.exe	26e459ec04a531f2
+34	2122	7063629707239579	simple/CMakeFiles/simplepir.dir/database.cpp.obj	44eca05540f47b9d
+44	1275	7064378747448712	test/CMakeFiles/pir_test.dir/pir_test.cpp.obj	1abf83653dfe4b56
+1364	1800	7064723781441606	test/db_test.exe	b60b052d2fc94a70
+77	2117	7063629707179598	test/CMakeFiles/msg_test.dir/msg_test.cpp.obj	abe6a42222199eef
+35	1280	7064378747492289	simple/CMakeFiles/simplepir.dir/simplePirClient.cpp.obj	6e3a5cf15f80c228
+1374	1804	7064723781521613	test/msg_test.exe	49e2c56c7aad694b
+85	2105	7063629707073955	test/CMakeFiles/server_test.dir/server_test.cpp.obj	8067c29a1aba672c
+26	1177	7064380994801570	simple/CMakeFiles/simplepir.dir/simplePirServer.cpp.obj	6156e6564075da2a
+1384	1798	7064723781451607	test/server_test.exe	a9fa6c7e06bd5c57
+1396	1804	7064723781521613	test/pir_test.exe	a579611a970d69e9
+14	928	7048664296668798	test/CMakeFiles/matrix_test.dir/matrix_test.cpp.obj	5bb2b524e8b3460f
+1410	1807	7064723781581673	test/matrix_test.exe	25b43f36f3ad0c07
+25	1956	7064725300373546	test/CMakeFiles/speed_test.dir/speed_test.cpp.obj	37e7972b10b6935b

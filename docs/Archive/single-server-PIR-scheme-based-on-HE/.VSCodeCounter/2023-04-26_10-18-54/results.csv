@@ -1,0 +1,14 @@
+"filename", "language", "C++", "comment", "blank", "total"
+"e:\5.paper\code\xzxpir\simple\database.cpp", "C++", 158, 11, 24, 193
+"e:\5.paper\code\xzxpir\simple\database.hpp", "C++", 40, 13, 11, 64
+"e:\5.paper\code\xzxpir\simple\matrix.cpp", "C++", 164, 5, 8, 177
+"e:\5.paper\code\xzxpir\simple\matrix.hpp", "C++", 36, 38, 16, 90
+"e:\5.paper\code\xzxpir\simple\pir.cpp", "C++", 53, 3, 9, 65
+"e:\5.paper\code\xzxpir\simple\pir.hpp", "C++", 32, 2, 6, 40
+"e:\5.paper\code\xzxpir\simple\simplePirClient.cpp", "C++", 0, 0, 3, 3
+"e:\5.paper\code\xzxpir\simple\simplePirClient.hpp", "C++", 4, 0, 0, 4
+"e:\5.paper\code\xzxpir\simple\simplePirServer.cpp", "C++", 10, 0, 3, 13
+"e:\5.paper\code\xzxpir\simple\simplePirServer.hpp", "C++", 7, 0, 1, 8
+"e:\5.paper\code\xzxpir\simple\utils.cpp", "C++", 251, 2, 20, 273
+"e:\5.paper\code\xzxpir\simple\utils.hpp", "C++", 22, 4, 11, 37
+"Total", "-", 777, 78, 112, 967

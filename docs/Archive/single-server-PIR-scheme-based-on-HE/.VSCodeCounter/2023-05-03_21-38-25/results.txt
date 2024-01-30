@@ -1,0 +1,36 @@
+Date : 2023-05-03 21:38:25
+Directory : e:\5.paper\code\xzxpir\simple
+Total : 12 files,  1320 codes, 159 comments, 181 blanks, all 1660 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| C++      |         12 |      1,320 |        159 |        181 |      1,660 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                              | files      | code       | comment    | blank      | total      |
++---------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                 |         12 |      1,320 |        159 |        181 |      1,660 |
++---------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                          | language | code       | comment    | blank      | total      |
++---------------------------------------------------+----------+------------+------------+------------+------------+
+| e:\5.paper\code\xzxpir\simple\database.cpp        | C++      |        178 |         25 |         27 |        230 |
+| e:\5.paper\code\xzxpir\simple\database.hpp        | C++      |         42 |         14 |         13 |         69 |
+| e:\5.paper\code\xzxpir\simple\matrix.cpp          | C++      |        402 |         26 |         34 |        462 |
+| e:\5.paper\code\xzxpir\simple\matrix.hpp          | C++      |         55 |          9 |         13 |         77 |
+| e:\5.paper\code\xzxpir\simple\pir.cpp             | C++      |         99 |         22 |         16 |        137 |
+| e:\5.paper\code\xzxpir\simple\pir.hpp             | C++      |         68 |         19 |         10 |         97 |
+| e:\5.paper\code\xzxpir\simple\simplePirClient.cpp | C++      |         66 |          2 |         12 |         80 |
+| e:\5.paper\code\xzxpir\simple\simplePirClient.hpp | C++      |         17 |          1 |          2 |         20 |
+| e:\5.paper\code\xzxpir\simple\simplePirServer.cpp | C++      |         71 |         29 |         16 |        116 |
+| e:\5.paper\code\xzxpir\simple\simplePirServer.hpp | C++      |         20 |          1 |          5 |         26 |
+| e:\5.paper\code\xzxpir\simple\utils.cpp           | C++      |        277 |          6 |         23 |        306 |
+| e:\5.paper\code\xzxpir\simple\utils.hpp           | C++      |         25 |          5 |         10 |         40 |
+| Total                                             |          |      1,320 |        159 |        181 |      1,660 |
++---------------------------------------------------+----------+------------+------------+------------+------------+

@@ -1,0 +1,5 @@
+pir_basic_test 0 0
+guass_sample_test 2 1.65963
+params_test 1 0.356226
+db_test 1 0.0182553
+---

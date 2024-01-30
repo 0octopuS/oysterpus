@@ -1,0 +1,72 @@
+[
+{
+  "directory": "E:/5.paper/code/xzxpir/build",
+  "command": "\"D:\\Applications\\Microsoft VS\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe\"  /nologo /TP -IE:\\5.paper\\code\\xzxpir\\include -external:IE:\\5.paper\\code\\SEAL\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\thirdparty\\msgsl-src\\include -external:W0 /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG -std:c++20 /Fosimple\\CMakeFiles\\simplepir.dir\\utils.cpp.obj /FdTARGET_COMPILE_PDB /FS -c E:\\5.paper\\code\\xzxpir\\simple\\utils.cpp",
+  "file": "E:\\5.paper\\code\\xzxpir\\simple\\utils.cpp"
+},
+{
+  "directory": "E:/5.paper/code/xzxpir/build",
+  "command": "\"D:\\Applications\\Microsoft VS\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe\"  /nologo /TP -IE:\\5.paper\\code\\xzxpir\\include -external:IE:\\5.paper\\code\\SEAL\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\thirdparty\\msgsl-src\\include -external:W0 /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG -std:c++20 /Fosimple\\CMakeFiles\\simplepir.dir\\matrix.cpp.obj /FdTARGET_COMPILE_PDB /FS -c E:\\5.paper\\code\\xzxpir\\simple\\matrix.cpp",
+  "file": "E:\\5.paper\\code\\xzxpir\\simple\\matrix.cpp"
+},
+{
+  "directory": "E:/5.paper/code/xzxpir/build",
+  "command": "\"D:\\Applications\\Microsoft VS\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe\"  /nologo /TP -IE:\\5.paper\\code\\xzxpir\\include -external:IE:\\5.paper\\code\\SEAL\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\thirdparty\\msgsl-src\\include -external:W0 /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG -std:c++20 /Fosimple\\CMakeFiles\\simplepir.dir\\database.cpp.obj /FdTARGET_COMPILE_PDB /FS -c E:\\5.paper\\code\\xzxpir\\simple\\database.cpp",
+  "file": "E:\\5.paper\\code\\xzxpir\\simple\\database.cpp"
+},
+{
+  "directory": "E:/5.paper/code/xzxpir/build",
+  "command": "\"D:\\Applications\\Microsoft VS\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe\"  /nologo /TP -IE:\\5.paper\\code\\xzxpir\\include -external:IE:\\5.paper\\code\\SEAL\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\thirdparty\\msgsl-src\\include -external:W0 /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG -std:c++20 /Fosimple\\CMakeFiles\\simplepir.dir\\pir.cpp.obj /FdTARGET_COMPILE_PDB /FS -c E:\\5.paper\\code\\xzxpir\\simple\\pir.cpp",
+  "file": "E:\\5.paper\\code\\xzxpir\\simple\\pir.cpp"
+},
+{
+  "directory": "E:/5.paper/code/xzxpir/build",
+  "command": "\"D:\\Applications\\Microsoft VS\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe\"  /nologo /TP -IE:\\5.paper\\code\\xzxpir\\include -external:IE:\\5.paper\\code\\SEAL\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\thirdparty\\msgsl-src\\include -external:W0 /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG -std:c++20 /Fosimple\\CMakeFiles\\simplepir.dir\\simplePirClient.cpp.obj /FdTARGET_COMPILE_PDB /FS -c E:\\5.paper\\code\\xzxpir\\simple\\simplePirClient.cpp",
+  "file": "E:\\5.paper\\code\\xzxpir\\simple\\simplePirClient.cpp"
+},
+{
+  "directory": "E:/5.paper/code/xzxpir/build",
+  "command": "\"D:\\Applications\\Microsoft VS\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe\"  /nologo /TP -IE:\\5.paper\\code\\xzxpir\\include -external:IE:\\5.paper\\code\\SEAL\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\thirdparty\\msgsl-src\\include -external:W0 /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG -std:c++20 /Fosimple\\CMakeFiles\\simplepir.dir\\simplePirServer.cpp.obj /FdTARGET_COMPILE_PDB /FS -c E:\\5.paper\\code\\xzxpir\\simple\\simplePirServer.cpp",
+  "file": "E:\\5.paper\\code\\xzxpir\\simple\\simplePirServer.cpp"
+},
+{
+  "directory": "E:/5.paper/code/xzxpir/build",
+  "command": "\"D:\\Applications\\Microsoft VS\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe\"  /nologo /TP -IE:\\5.paper\\code\\xzxpir\\simple -IE:\\5.paper\\code\\xzxpir\\include -external:IE:\\5.paper\\code\\SEAL\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\thirdparty\\msgsl-src\\include -external:W0 /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG -std:c++20 /Fotest\\CMakeFiles\\params_test.dir\\params_test.cpp.obj /FdTARGET_COMPILE_PDB /FS -c E:\\5.paper\\code\\xzxpir\\test\\params_test.cpp",
+  "file": "E:\\5.paper\\code\\xzxpir\\test\\params_test.cpp"
+},
+{
+  "directory": "E:/5.paper/code/xzxpir/build",
+  "command": "\"D:\\Applications\\Microsoft VS\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe\"  /nologo /TP -IE:\\5.paper\\code\\xzxpir\\simple -IE:\\5.paper\\code\\xzxpir\\include -external:IE:\\5.paper\\code\\SEAL\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\thirdparty\\msgsl-src\\include -external:W0 /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG -std:c++20 /Fotest\\CMakeFiles\\guass_sample_test.dir\\guass_sample_test.cpp.obj /FdTARGET_COMPILE_PDB /FS -c E:\\5.paper\\code\\xzxpir\\test\\guass_sample_test.cpp",
+  "file": "E:\\5.paper\\code\\xzxpir\\test\\guass_sample_test.cpp"
+},
+{
+  "directory": "E:/5.paper/code/xzxpir/build",
+  "command": "\"D:\\Applications\\Microsoft VS\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe\"  /nologo /TP -IE:\\5.paper\\code\\xzxpir\\simple -IE:\\5.paper\\code\\xzxpir\\include -external:IE:\\5.paper\\code\\SEAL\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\thirdparty\\msgsl-src\\include -external:W0 /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG -std:c++20 /Fotest\\CMakeFiles\\db_test.dir\\db_test.cpp.obj /FdTARGET_COMPILE_PDB /FS -c E:\\5.paper\\code\\xzxpir\\test\\db_test.cpp",
+  "file": "E:\\5.paper\\code\\xzxpir\\test\\db_test.cpp"
+},
+{
+  "directory": "E:/5.paper/code/xzxpir/build",
+  "command": "\"D:\\Applications\\Microsoft VS\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe\"  /nologo /TP -IE:\\5.paper\\code\\xzxpir\\simple -IE:\\5.paper\\code\\xzxpir\\include -external:IE:\\5.paper\\code\\SEAL\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\thirdparty\\msgsl-src\\include -external:W0 /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG -std:c++20 /Fotest\\CMakeFiles\\msg_test.dir\\msg_test.cpp.obj /FdTARGET_COMPILE_PDB /FS -c E:\\5.paper\\code\\xzxpir\\test\\msg_test.cpp",
+  "file": "E:\\5.paper\\code\\xzxpir\\test\\msg_test.cpp"
+},
+{
+  "directory": "E:/5.paper/code/xzxpir/build",
+  "command": "\"D:\\Applications\\Microsoft VS\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe\"  /nologo /TP -IE:\\5.paper\\code\\xzxpir\\simple -IE:\\5.paper\\code\\xzxpir\\include -external:IE:\\5.paper\\code\\SEAL\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\thirdparty\\msgsl-src\\include -external:W0 /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG -std:c++20 /Fotest\\CMakeFiles\\server_test.dir\\server_test.cpp.obj /FdTARGET_COMPILE_PDB /FS -c E:\\5.paper\\code\\xzxpir\\test\\server_test.cpp",
+  "file": "E:\\5.paper\\code\\xzxpir\\test\\server_test.cpp"
+},
+{
+  "directory": "E:/5.paper/code/xzxpir/build",
+  "command": "\"D:\\Applications\\Microsoft VS\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe\"  /nologo /TP -IE:\\5.paper\\code\\xzxpir\\simple -IE:\\5.paper\\code\\xzxpir\\include -external:IE:\\5.paper\\code\\SEAL\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\thirdparty\\msgsl-src\\include -external:W0 /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG -std:c++20 /Fotest\\CMakeFiles\\pir_test.dir\\pir_test.cpp.obj /FdTARGET_COMPILE_PDB /FS -c E:\\5.paper\\code\\xzxpir\\test\\pir_test.cpp",
+  "file": "E:\\5.paper\\code\\xzxpir\\test\\pir_test.cpp"
+},
+{
+  "directory": "E:/5.paper/code/xzxpir/build",
+  "command": "\"D:\\Applications\\Microsoft VS\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe\"  /nologo /TP -IE:\\5.paper\\code\\xzxpir\\simple -IE:\\5.paper\\code\\xzxpir\\include -external:IE:\\5.paper\\code\\SEAL\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\thirdparty\\msgsl-src\\include -external:W0 /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG -std:c++20 /Fotest\\CMakeFiles\\matrix_test.dir\\matrix_test.cpp.obj /FdTARGET_COMPILE_PDB /FS -c E:\\5.paper\\code\\xzxpir\\test\\matrix_test.cpp",
+  "file": "E:\\5.paper\\code\\xzxpir\\test\\matrix_test.cpp"
+},
+{
+  "directory": "E:/5.paper/code/xzxpir/build",
+  "command": "\"D:\\Applications\\Microsoft VS\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe\"  /nologo /TP -IE:\\5.paper\\code\\xzxpir\\simple -IE:\\5.paper\\code\\xzxpir\\include -external:IE:\\5.paper\\code\\SEAL\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\native\\src -external:IE:\\5.paper\\code\\SEAL\\build\\thirdparty\\msgsl-src\\include -external:W0 /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG -std:c++20 /Fotest\\CMakeFiles\\speed_test.dir\\speed_test.cpp.obj /FdTARGET_COMPILE_PDB /FS -c E:\\5.paper\\code\\xzxpir\\test\\speed_test.cpp",
+  "file": "E:\\5.paper\\code\\xzxpir\\test\\speed_test.cpp"
+}
+]

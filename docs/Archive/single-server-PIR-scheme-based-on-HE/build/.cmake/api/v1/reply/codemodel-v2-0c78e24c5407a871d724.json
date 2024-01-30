@@ -1,0 +1,186 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "simple",
+					"jsonFile" : "directory-simple-Release-222f01dde327237477dc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "simple",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "test",
+					"jsonFile" : "directory-test-Release-f18be1977b403cfd1a50.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "test",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						8
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "XZXPIR"
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "simplepir",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "test",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						8
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "db_test::@36f028580bb02cc8272a",
+					"jsonFile" : "target-db_test-Release-f54c7a9c0b20da2c32f9.json",
+					"name" : "db_test",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "guass_sample_test::@36f028580bb02cc8272a",
+					"jsonFile" : "target-guass_sample_test-Release-c33b251310104be0a081.json",
+					"name" : "guass_sample_test",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "matrix_test::@36f028580bb02cc8272a",
+					"jsonFile" : "target-matrix_test-Release-27c1442115d1477a841c.json",
+					"name" : "matrix_test",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "msg_test::@36f028580bb02cc8272a",
+					"jsonFile" : "target-msg_test-Release-06f5e57101bfad50f24a.json",
+					"name" : "msg_test",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "params_test::@36f028580bb02cc8272a",
+					"jsonFile" : "target-params_test-Release-75c46a5910ec943fcfae.json",
+					"name" : "params_test",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "pir_test::@36f028580bb02cc8272a",
+					"jsonFile" : "target-pir_test-Release-0c0a7e70207c29a2141e.json",
+					"name" : "pir_test",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "server_test::@36f028580bb02cc8272a",
+					"jsonFile" : "target-server_test-Release-720bf0b38b2bce9a4680.json",
+					"name" : "server_test",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "simplepir::@5118a7a25b8c3ee4e053",
+					"jsonFile" : "target-simplepir-Release-69ce5743e9ac93cebb71.json",
+					"name" : "simplepir",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "speed_test::@36f028580bb02cc8272a",
+					"jsonFile" : "target-speed_test-Release-449161ac20486c40290e.json",
+					"name" : "speed_test",
+					"projectIndex" : 2
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/5.paper/code/xzxpir/build",
+		"source" : "E:/5.paper/code/xzxpir"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

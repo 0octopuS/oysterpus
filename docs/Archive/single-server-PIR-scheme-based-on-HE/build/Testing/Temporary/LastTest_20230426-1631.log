@@ -1,0 +1,57 @@
+Start testing: Apr 27 00:31 中国标准时间
+----------------------------------------------------------
+3/3 Testing: db_test
+3/3 Test: db_test
+Command: "E:/5.paper/code/xzxpir/build/test/db_test.exe"
+Directory: E:/5.paper/code/xzxpir/build/test
+"db_test" start time: Apr 27 00:31 中国标准时间
+Output:
+----------------------------------------------------------
+
+>>>> Medium emlements
+Working with: 
+   n = 1024
+   db size = 2^2 (l = 2, m = 32)
+   logq = 991
+   p = 6.4
+Total packed DB size is ~0.000005 MB
+
+Matrix size: 2x2
+Info size: 4x9
+MakeDB
+Setup Good
+
+>>>> Small emlements
+Working with: 
+   n = 1024
+   db size = 2^1 (l = 2, m = 32)
+   logq = 991
+   p = 6.4
+Total packed DB size is ~0.000002 MB
+
+Matrix size: 1x2
+Info size: 4x3
+MakeDB
+Setup Good
+
+>>>> Large emlements
+Working with: 
+   n = 1024
+   db size = 2^2 (l = 4, m = 32)
+   logq = 991
+   p = 6.4
+Total packed DB size is ~0.000009 MB
+
+Matrix size: 2x4
+Info size: 4x12
+MakeDB
+Setup Good
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"db_test" end time: Apr 27 00:31 中国标准时间
+"db_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Apr 27 00:31 中国标准时间

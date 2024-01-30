@@ -1,0 +1,133 @@
+Date : 2023-04-26 10:18:54
+Directory : e:\5.paper\code\xzxpir\simple
+Total : 66 files,  -18072 codes, -1831 comments, -2514 blanks, all -22417 lines
+
+Languages
++-------------+------------+------------+------------+------------+------------+
+| language    | files      | code       | comment    | blank      | total      |
++-------------+------------+------------+------------+------------+------------+
+| XML         |          1 |        -96 |          0 |         -1 |        -97 |
+| log         |          6 |       -375 |          0 |        -67 |       -442 |
+| CMake Cache |          2 |       -421 |          0 |       -101 |       -522 |
+| Ninja       |          4 |       -465 |          0 |       -241 |       -706 |
+| CMake       |         15 |       -522 |          0 |       -125 |       -647 |
+| C           |          2 |       -642 |        -61 |       -139 |       -842 |
+| JSON        |         14 |     -2,615 |          0 |        -11 |     -2,626 |
+| C++         |         22 |    -12,936 |     -1,770 |     -1,829 |    -16,535 |
++-------------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                                               | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                                  |         66 |    -18,072 |     -1,831 |     -2,514 |    -22,417 |
+| . (Files)                                                                                                                                          |          5 |        129 |          7 |         13 |        149 |
+| ..                                                                                                                                                 |         61 |    -18,201 |     -1,838 |     -2,527 |    -22,566 |
+| ..\build                                                                                                                                           |         46 |     -5,764 |       -124 |       -823 |     -6,711 |
+| ..\build (Files)                                                                                                                                   |          5 |       -638 |          0 |       -208 |       -846 |
+| ..\build\.cmake                                                                                                                                    |         12 |     -2,547 |          0 |        -11 |     -2,558 |
+| ..\build\.cmake\api                                                                                                                                |         12 |     -2,547 |          0 |        -11 |     -2,558 |
+| ..\build\.cmake\api\v1                                                                                                                             |         12 |     -2,547 |          0 |        -11 |     -2,558 |
+| ..\build\.cmake\api\v1\query                                                                                                                       |          1 |         -1 |          0 |          0 |         -1 |
+| ..\build\.cmake\api\v1\query\client-vscode                                                                                                         |          1 |         -1 |          0 |          0 |         -1 |
+| ..\build\.cmake\api\v1\reply                                                                                                                       |         11 |     -2,546 |          0 |        -11 |     -2,557 |
+| ..\build\CMakeFiles                                                                                                                                |         11 |     -1,562 |       -124 |       -415 |     -2,101 |
+| ..\build\CMakeFiles (Files)                                                                                                                        |          3 |       -153 |          0 |        -97 |       -250 |
+| ..\build\CMakeFiles\3.24.2                                                                                                                         |          6 |     -1,407 |       -124 |       -315 |     -1,846 |
+| ..\build\CMakeFiles\3.24.2 (Files)                                                                                                                 |          4 |       -139 |          0 |        -41 |       -180 |
+| ..\build\CMakeFiles\3.24.2\CompilerIdC                                                                                                             |          1 |       -640 |        -61 |       -138 |       -839 |
+| ..\build\CMakeFiles\3.24.2\CompilerIdCXX                                                                                                           |          1 |       -628 |        -63 |       -136 |       -827 |
+| ..\build\CMakeFiles\ShowIncludes                                                                                                                   |          2 |         -2 |          0 |         -3 |         -5 |
+| ..\build\Testing                                                                                                                                   |          4 |       -387 |          0 |         -6 |       -393 |
+| ..\build\Testing\20230411-0440                                                                                                                     |          1 |        -96 |          0 |         -1 |        -97 |
+| ..\build\Testing\Temporary                                                                                                                         |          3 |       -291 |          0 |         -5 |       -296 |
+| ..\build\_deps                                                                                                                                     |         11 |       -562 |          0 |       -170 |       -732 |
+| ..\build\_deps\googletest-subbuild                                                                                                                 |         11 |       -562 |          0 |       -170 |       -732 |
+| ..\build\_deps\googletest-subbuild (Files)                                                                                                         |          3 |       -258 |          0 |       -100 |       -358 |
+| ..\build\_deps\googletest-subbuild\CMakeFiles                                                                                                      |          4 |        -88 |          0 |        -22 |       -110 |
+| ..\build\_deps\googletest-subbuild\CMakeFiles (Files)                                                                                              |          2 |        -32 |          0 |        -16 |        -48 |
+| ..\build\_deps\googletest-subbuild\CMakeFiles\3.24.2                                                                                               |          1 |        -10 |          0 |         -6 |        -16 |
+| ..\build\_deps\googletest-subbuild\CMakeFiles\googletest-populate.dir                                                                              |          1 |        -46 |          0 |          0 |        -46 |
+| ..\build\_deps\googletest-subbuild\googletest-populate-prefix                                                                                      |          4 |       -216 |          0 |        -48 |       -264 |
+| ..\build\_deps\googletest-subbuild\googletest-populate-prefix\src                                                                                  |          3 |       -197 |          0 |        -44 |       -241 |
+| ..\build\_deps\googletest-subbuild\googletest-populate-prefix\src\googletest-populate-stamp                                                        |          3 |       -197 |          0 |        -44 |       -241 |
+| ..\build\_deps\googletest-subbuild\googletest-populate-prefix\tmp                                                                                  |          1 |        -19 |          0 |         -4 |        -23 |
+| ..\build\simple                                                                                                                                    |          1 |        -29 |          0 |         -6 |        -35 |
+| ..\build\test                                                                                                                                      |          2 |        -39 |          0 |         -7 |        -46 |
+| ..\include                                                                                                                                         |         13 |    -12,412 |     -1,714 |     -1,700 |    -15,826 |
+| ..\include\fmt                                                                                                                                     |         13 |    -12,412 |     -1,714 |     -1,700 |    -15,826 |
+| ..\test                                                                                                                                            |          2 |        -25 |          0 |         -4 |        -29 |
++----------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------------------------------------------------------------------+-------------+------------+------------+------------+------------+
+| filename                                                                                                                                           | language    | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------------------------------------------+-------------+------------+------------+------------+------------+
+| e:\5.paper\code\xzxpir\build\.cmake\api\v1\query\client-vscode\query.json                                                                          | JSON        |         -1 |          0 |          0 |         -1 |
+| e:\5.paper\code\xzxpir\build\.cmake\api\v1\reply\cache-v2-c2073e86ca95b41c9ba7.json                                                                | JSON        |     -1,399 |          0 |         -1 |     -1,400 |
+| e:\5.paper\code\xzxpir\build\.cmake\api\v1\reply\cmakeFiles-v1-df592dfb7994e9f3133c.json                                                           | JSON        |       -252 |          0 |         -1 |       -253 |
+| e:\5.paper\code\xzxpir\build\.cmake\api\v1\reply\codemodel-v2-3052dd6b14667bdb1474.json                                                            | JSON        |       -132 |          0 |         -1 |       -133 |
+| e:\5.paper\code\xzxpir\build\.cmake\api\v1\reply\directory-.-Release-d0094a50bb2071803777.json                                                     | JSON        |        -14 |          0 |         -1 |        -15 |
+| e:\5.paper\code\xzxpir\build\.cmake\api\v1\reply\directory-simple-Release-222f01dde327237477dc.json                                                | JSON        |        -14 |          0 |         -1 |        -15 |
+| e:\5.paper\code\xzxpir\build\.cmake\api\v1\reply\directory-test-Release-f18be1977b403cfd1a50.json                                                  | JSON        |        -14 |          0 |         -1 |        -15 |
+| e:\5.paper\code\xzxpir\build\.cmake\api\v1\reply\index-2023-04-25T05-49-48-0720.json                                                               | JSON        |       -132 |          0 |         -1 |       -133 |
+| e:\5.paper\code\xzxpir\build\.cmake\api\v1\reply\target-guass_sample_test-Release-84b01fd74354fe620c5e.json                                        | JSON        |       -186 |          0 |         -1 |       -187 |
+| e:\5.paper\code\xzxpir\build\.cmake\api\v1\reply\target-pir_basic_test-Release-0a5ffa7c6cf7ce834a9c.json                                           | JSON        |       -181 |          0 |         -1 |       -182 |
+| e:\5.paper\code\xzxpir\build\.cmake\api\v1\reply\target-simplepir-Release-245c61849039b0d8cf3e.json                                                | JSON        |       -159 |          0 |         -1 |       -160 |
+| e:\5.paper\code\xzxpir\build\.cmake\api\v1\reply\toolchains-v1-8b570bacc2a9afecb005.json                                                           | JSON        |        -63 |          0 |         -1 |        -64 |
+| e:\5.paper\code\xzxpir\build\CMakeCache.txt                                                                                                        | CMake Cache |       -331 |          0 |        -82 |       -413 |
+| e:\5.paper\code\xzxpir\build\CMakeFiles\3.24.2\CMakeCCompiler.cmake                                                                                | CMake       |        -57 |          0 |        -16 |        -73 |
+| e:\5.paper\code\xzxpir\build\CMakeFiles\3.24.2\CMakeCXXCompiler.cmake                                                                              | CMake       |        -66 |          0 |        -18 |        -84 |
+| e:\5.paper\code\xzxpir\build\CMakeFiles\3.24.2\CMakeRCCompiler.cmake                                                                               | CMake       |         -6 |          0 |         -1 |         -7 |
+| e:\5.paper\code\xzxpir\build\CMakeFiles\3.24.2\CMakeSystem.cmake                                                                                   | CMake       |        -10 |          0 |         -6 |        -16 |
+| e:\5.paper\code\xzxpir\build\CMakeFiles\3.24.2\CompilerIdCXX\CMakeCXXCompilerId.cpp                                                                | C++         |       -628 |        -63 |       -136 |       -827 |
+| e:\5.paper\code\xzxpir\build\CMakeFiles\3.24.2\CompilerIdC\CMakeCCompilerId.c                                                                      | C           |       -640 |        -61 |       -138 |       -839 |
+| e:\5.paper\code\xzxpir\build\CMakeFiles\CMakeError.log                                                                                             | log         |        -42 |          0 |        -32 |        -74 |
+| e:\5.paper\code\xzxpir\build\CMakeFiles\CMakeOutput.log                                                                                            | log         |        -41 |          0 |        -29 |        -70 |
+| e:\5.paper\code\xzxpir\build\CMakeFiles\ShowIncludes\foo.h                                                                                         | C++         |          0 |          0 |         -2 |         -2 |
+| e:\5.paper\code\xzxpir\build\CMakeFiles\ShowIncludes\main.c                                                                                        | C           |         -2 |          0 |         -1 |         -3 |
+| e:\5.paper\code\xzxpir\build\CMakeFiles\rules.ninja                                                                                                | Ninja       |        -70 |          0 |        -36 |       -106 |
+| e:\5.paper\code\xzxpir\build\CTestTestfile.cmake                                                                                                   | CMake       |         -8 |          0 |         -1 |         -9 |
+| e:\5.paper\code\xzxpir\build\Testing\20230411-0440\Test.xml                                                                                        | XML         |        -96 |          0 |         -1 |        -97 |
+| e:\5.paper\code\xzxpir\build\Testing\Temporary\LastTest.log                                                                                        | log         |         -3 |          0 |         -1 |         -4 |
+| e:\5.paper\code\xzxpir\build\Testing\Temporary\LastTest_20230411-0440.log                                                                          | log         |       -287 |          0 |         -3 |       -290 |
+| e:\5.paper\code\xzxpir\build\Testing\Temporary\LastTestsFailed_20230411-0440.log                                                                   | log         |         -1 |          0 |         -1 |         -2 |
+| e:\5.paper\code\xzxpir\build\_deps\googletest-subbuild\CMakeCache.txt                                                                              | CMake Cache |        -90 |          0 |        -19 |       -109 |
+| e:\5.paper\code\xzxpir\build\_deps\googletest-subbuild\CMakeFiles\3.24.2\CMakeSystem.cmake                                                         | CMake       |        -10 |          0 |         -6 |        -16 |
+| e:\5.paper\code\xzxpir\build\_deps\googletest-subbuild\CMakeFiles\CMakeOutput.log                                                                  | log         |         -1 |          0 |         -1 |         -2 |
+| e:\5.paper\code\xzxpir\build\_deps\googletest-subbuild\CMakeFiles\googletest-populate.dir\Labels.json                                              | JSON        |        -46 |          0 |          0 |        -46 |
+| e:\5.paper\code\xzxpir\build\_deps\googletest-subbuild\CMakeFiles\rules.ninja                                                                      | Ninja       |        -31 |          0 |        -15 |        -46 |
+| e:\5.paper\code\xzxpir\build\_deps\googletest-subbuild\build.ninja                                                                                 | Ninja       |       -130 |          0 |        -74 |       -204 |
+| e:\5.paper\code\xzxpir\build\_deps\googletest-subbuild\cmake_install.cmake                                                                         | CMake       |        -38 |          0 |         -7 |        -45 |
+| e:\5.paper\code\xzxpir\build\_deps\googletest-subbuild\googletest-populate-prefix\src\googletest-populate-stamp\download-googletest-populate.cmake | CMake       |       -143 |          0 |        -31 |       -174 |
+| e:\5.paper\code\xzxpir\build\_deps\googletest-subbuild\googletest-populate-prefix\src\googletest-populate-stamp\extract-googletest-populate.cmake  | CMake       |        -54 |          0 |        -12 |        -66 |
+| e:\5.paper\code\xzxpir\build\_deps\googletest-subbuild\googletest-populate-prefix\src\googletest-populate-stamp\verify-googletest-populate.cmake   | CMake       |          0 |          0 |         -1 |         -1 |
+| e:\5.paper\code\xzxpir\build\_deps\googletest-subbuild\googletest-populate-prefix\tmp\googletest-populate-mkdirs.cmake                             | CMake       |        -19 |          0 |         -4 |        -23 |
+| e:\5.paper\code\xzxpir\build\build.ninja                                                                                                           | Ninja       |       -234 |          0 |       -116 |       -350 |
+| e:\5.paper\code\xzxpir\build\cmake_install.cmake                                                                                                   | CMake       |        -43 |          0 |         -9 |        -52 |
+| e:\5.paper\code\xzxpir\build\compile_commands.json                                                                                                 | JSON        |        -22 |          0 |          0 |        -22 |
+| e:\5.paper\code\xzxpir\build\simple\cmake_install.cmake                                                                                            | CMake       |        -29 |          0 |         -6 |        -35 |
+| e:\5.paper\code\xzxpir\build\test\CTestTestfile.cmake                                                                                              | CMake       |        -10 |          0 |         -1 |        -11 |
+| e:\5.paper\code\xzxpir\build\test\cmake_install.cmake                                                                                              | CMake       |        -29 |          0 |         -6 |        -35 |
+| e:\5.paper\code\xzxpir\include\fmt\args.h                                                                                                          | C++         |       -135 |        -67 |        -33 |       -235 |
+| e:\5.paper\code\xzxpir\include\fmt\chrono.h                                                                                                        | C++         |     -1,919 |       -167 |       -209 |     -2,295 |
+| e:\5.paper\code\xzxpir\include\fmt\color.h                                                                                                         | C++         |       -503 |        -78 |        -53 |       -634 |
+| e:\5.paper\code\xzxpir\include\fmt\compile.h                                                                                                       | C++         |       -493 |        -30 |        -85 |       -608 |
+| e:\5.paper\code\xzxpir\include\fmt\core.h                                                                                                          | C++         |     -2,293 |       -342 |       -367 |     -3,002 |
+| e:\5.paper\code\xzxpir\include\fmt\format-inl.h                                                                                                    | C++         |     -1,462 |       -114 |       -127 |     -1,703 |
+| e:\5.paper\code\xzxpir\include\fmt\format.h                                                                                                        | C++         |     -3,648 |       -564 |       -439 |     -4,651 |
+| e:\5.paper\code\xzxpir\include\fmt\os.h                                                                                                            | C++         |       -246 |       -140 |        -85 |       -471 |
+| e:\5.paper\code\xzxpir\include\fmt\ostream.h                                                                                                       | C++         |       -151 |        -30 |        -29 |       -210 |
+| e:\5.paper\code\xzxpir\include\fmt\printf.h                                                                                                        | C++         |       -505 |        -96 |        -79 |       -680 |
+| e:\5.paper\code\xzxpir\include\fmt\ranges.h                                                                                                        | C++         |       -564 |        -55 |       -114 |       -733 |
+| e:\5.paper\code\xzxpir\include\fmt\std.h                                                                                                           | C++         |       -282 |        -19 |        -43 |       -344 |
+| e:\5.paper\code\xzxpir\include\fmt\xchar.h                                                                                                         | C++         |       -211 |        -12 |        -37 |       -260 |
+| e:\5.paper\code\xzxpir\simple\database.cpp                                                                                                         | C++         |        100 |          3 |          9 |        112 |
+| e:\5.paper\code\xzxpir\simple\database.hpp                                                                                                         | C++         |          5 |          1 |          1 |          7 |
+| e:\5.paper\code\xzxpir\simple\matrix.cpp                                                                                                           | C++         |         24 |          3 |          1 |         28 |
+| e:\5.paper\code\xzxpir\simple\utils.cpp                                                                                                            | C++         |          0 |          0 |          1 |          1 |
+| e:\5.paper\code\xzxpir\simple\utils.hpp                                                                                                            | C++         |          0 |          0 |          1 |          1 |
+| e:\5.paper\code\xzxpir\test\guass_sample_test.cpp                                                                                                  | C++         |        -12 |          0 |         -1 |        -13 |
+| e:\5.paper\code\xzxpir\test\pir_basic_test.cpp                                                                                                     | C++         |        -13 |          0 |         -3 |        -16 |
+| Total                                                                                                                                              |             |    -18,072 |     -1,831 |     -2,514 |    -22,417 |
++----------------------------------------------------------------------------------------------------------------------------------------------------+-------------+------------+------------+------------+------------+

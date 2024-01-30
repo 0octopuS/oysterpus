@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20230411-0440-Experimental"
+	Name="(empty)"
+	Generator="ctest-3.24.2"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="Windows"
+	Hostname="0ctopuS"
+	OSRelease=" Personal"
+	OSVersion=" (Build 22621)"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString="AuthenticAMD"
+	VendorID="Advanced Micro Devices"
+	FamilyID="15"
+	ModelID="4"
+	ProcessorCacheSize="64"
+	NumberOfLogicalCPU="16"
+	NumberOfPhysicalCPU="8"
+	TotalVirtualMemory="19452"
+	TotalPhysicalMemory="15556"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="3194"
+	>
+	<Testing>
+		<StartDateTime>Apr 11 12:40 [NON-UTF-8-BYTE-0xD6]й[NON-UTF-8-BYTE-0xFA][NON-UTF-8-BYTE-0xB1][NON-UTF-8-BYTE-0xEA]׼ʱ[NON-UTF-8-BYTE-0xBC][NON-UTF-8-BYTE-0xE4]</StartDateTime>
+		<StartTestTime>1681188049</StartTestTime>
+		<TestList>
+			<Test>./test/pir_basic_test</Test>
+			<Test>./test/guass_sample_test</Test>
+		</TestList>
+		<Test Status="failed">
+			<Name>pir_basic_test</Name>
+			<Path>./test</Path>
+			<FullName>./test/pir_basic_test</FullName>
+			<FullCommandLine>E:\5.paper\code\xzxpir\build\test\pir_basic_test.exe</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="text/string" name="Exit Code">
+					<Value>Exit code 0xc0000409
+</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Exit Value">
+					<Value>3221226505</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.238864</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>E:\5.paper\code\xzxpir\build\test\pir_basic_test.exe</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value></Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<Test Status="passed">
+			<Name>guass_sample_test</Name>
+			<Path>./test</Path>
+			<FullName>./test/guass_sample_test</FullName>
+			<FullCommandLine>E:\5.paper\code\xzxpir\build\test\guass_sample_test.exe</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>1.61131</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>E:\5.paper\code\xzxpir\build\test\guass_sample_test.exe</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJxd00tuwyAUQNG5V/FWYJnHg6SD7KKzyIPYprLVjyODk3T3TZURd8aVAB3xGfbxM5Vz18vpJF0zvNLVqXX6Oq3OUGes81Dnsc43MMiCywHmIHOgOdgccA46B56DT+FTnht8Cp/Cp/ApfAqfwqfwefg8fJ4XC5+Hz8Pn4fPwefg8fAafwWfwGV8efAafwWfwGXwGX4AvwBfgC/AFfg34AnwBvgBfgC/CF+GL8EX4ovVt2zbn93nJcr1sRdYPKXOSkvJzvJfrXuR+ybKl7/WWJsnLz5hkKZIeY0pTfk2et5Tn9Wv6X+06NRl+nxu0ffMHCcdGKg==</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Apr 11 12:40 [NON-UTF-8-BYTE-0xD6]й[NON-UTF-8-BYTE-0xFA][NON-UTF-8-BYTE-0xB1][NON-UTF-8-BYTE-0xEA]׼ʱ[NON-UTF-8-BYTE-0xBC][NON-UTF-8-BYTE-0xE4]</EndDateTime>
+		<EndTestTime>1681188050</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>
